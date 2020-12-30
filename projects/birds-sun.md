@@ -1,6 +1,6 @@
 ---
 title: Birds & Sun
-thumbnail: https://brightbluewaves.s3.us-east-1.amazonaws.com/B2B8A065-0B77-4318-BC11-A45536ECEB55.jpeg
+thumbnail: https://brightbluewaves.s3.us-east-1.amazonaws.com/F3BFEB1C-0697-4DE5-A962-AE22835AB69E.jpeg
 year: "2020"
 categories:
 - Birds
