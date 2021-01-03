@@ -62,7 +62,7 @@ p {
   margin: 0;
 }
 .content-text {
-  padding: 4rem 0 6rem 0;
+  padding: 2rem 0 2rem 0;
   font-size: 2rem;
   font-weight: 400;
   margin-left: 0;
