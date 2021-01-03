@@ -21,7 +21,7 @@ export default {
 <style lang="scss">
 @import url("https://rsms.me/inter/inter.css");
 html {
-  font-family: "Inter", sans-serif;
+  font-family: "Avenir", sans-serif;
   font-size: 14px;
   font-weight: 500;
   box-sizing: border-box;
@@ -29,7 +29,7 @@ html {
 
 @supports (font-variation-settings: normal) {
   html {
-    font-family: "Inter var", sans-serif;
+    font-family: "Avenir", sans-serif;
   }
 }
 
@@ -39,8 +39,8 @@ html {
   box-sizing: inherit;
 }
 body {
-  background-color: #131313;
-  color: white;
+  background-color: #EFEDE7;
+  color: #332E3C;
   margin: 0;
   padding: 0;
 }

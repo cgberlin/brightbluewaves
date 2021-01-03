@@ -5,7 +5,6 @@ year: "2020"
 categories:
 - Birds
 - Calm
-- 'Clear Sky '
 
 ---
 Examples text and pictures from today....

@@ -36,29 +36,32 @@ export default {
 <style lang="scss" scoped>
 .project-meta {
   display: flex;
-  padding: 4rem 0;
+  padding: 0rem 0;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   line-height: 1.5;
 }
 .project-title {
   flex: 0 0 40%;
-  font-size: 1rem;
+  font-size: 0.75rem;
   font-weight: 500;
   margin: 0;
 }
 .project-categories {
-  flex: 1;
+  flex: 0.5;
+  font-size: 0.75rem;
   padding: 0;
   margin: 0;
-  list-style: none;
+  list-style-type: square;
 }
 .project-category {
   padding: 0;
+  font-size: 0.75rem;
   margin: 0;
 }
 .project-year {
   flex: 1;
   text-align: right;
+  font-size: 0.85rem;
 }
 </style>
