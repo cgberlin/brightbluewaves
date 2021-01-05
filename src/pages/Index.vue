@@ -9,7 +9,7 @@
       >
         <g-image
           class="project-thumbnail"
-          :src="project.node.thumbnail.src"
+          :src="project.node.thumbnail"
           :alt="project.node.title"
         ></g-image>
         <ProjectMeta
