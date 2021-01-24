@@ -72,8 +72,12 @@ export default {
   margin: 0;
 }
 .copyright-text {
-  transform: rotate(90deg);
-  padding-bottom: 16rem;
+  transform: rotate(90deg) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  padding-bottom: 16rem !important;
+  font-size: 1rem !important;
+  color: gray;
 }
 .social {
   .channel {
