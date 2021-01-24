@@ -66,7 +66,9 @@ export default {
 }
 .to-top-image {
   height: auto;
-  width: 2rem;
+  // fight me 
+  width: 2rem !important;
+  max-width: 2rem !important;
   margin: 0;
 }
 .copyright-text {
