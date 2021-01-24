@@ -14,3 +14,9 @@ fields:
 - type: list
   name: categories
   label: categories
+- name: author
+  type: text
+  config:
+    required: false
+  label: author
+  description: Author to associate with the post.
