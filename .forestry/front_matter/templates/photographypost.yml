@@ -21,3 +21,5 @@ fields:
     required: false
   label: author
   description: Author to associate with the post.
+pages:
+- photographyposts/my-first-test-post.md
