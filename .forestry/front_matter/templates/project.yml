@@ -16,6 +16,12 @@ fields:
   label: categories
   config:
     use_select: false
+- name: author
+  type: text
+  config:
+    required: false
+  label: author
+  description: 'Author of the post. '
 pages:
 - projects/birds-sun.md
 - projects/january-wednesday-morning-sdwim.md
