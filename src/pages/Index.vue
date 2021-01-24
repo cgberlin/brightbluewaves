@@ -1,27 +1,42 @@
+<!-- Main landing page / displays a listing of posts -->
 <template>
   <Layout>
     <section class="projects">
+      <!-- 
+        iterate through the projects from ./projects 
+        click -> ./Project.vue 
+      -->
       <article
         @click="goTo($event, project.node.path)"
         class="project"
         v-for="project in $page.projects.edges"
         :key="project.node.id"
       >
+        <!-- main post image on landing page -->
         <g-image
           class="project-thumbnail"
           :src="project.node.thumbnail"
           :alt="project.node.title"
         ></g-image>
+        <!-- 
+          meta data component beneath the image 
+        -->
         <ProjectMeta
           :title="project.node.title"
           :categories="project.node.categories"
           :year="project.node.year"
+          :author="project.node.author"
         />
       </article>
     </section>
   </Layout>
 </template>
 
+<!-- 
+Query gridsome for our projects 
+These are located at ./projects      
+Objects are mapped to $page.projects
+-->
 <page-query>
 query Projects {
   projects: allProject {
@@ -33,6 +48,7 @@ query Projects {
         year
         thumbnail
         categories
+        author
       }
     }
   }

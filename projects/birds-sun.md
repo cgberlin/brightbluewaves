@@ -5,7 +5,7 @@ year: "2020"
 categories:
 - Birds
 - Calm
-
+author: ""
 ---
 Examples text and pictures from today....
 

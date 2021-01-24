@@ -1,18 +1,10 @@
-<!-- Displays the meta data for a project in a small, condensed form. Used for photo-labels etc. -->
+<!-- Displays the meta data for a project in a header/title form. Used for individual post. -->
 <template>
-  <section class="project-meta">
-    <!-- conditionally show pipe + author if it exists -->
-    <h2 class="project-title">{{ title }} {{author ? `| ${author}` : ''}}</h2>
-    <ul class="project-categories">
-      <!-- iterate through the categories and display them if they exist -->
-      <li
-        class="project-category"
-        v-for="(category, index) in categories"
-        :key="index"
-      >
-        {{ category }}
-      </li>
-    </ul>
+  <section class="project-header">
+    <div class="project-title-row">
+      <h2 class="project-title project-title-text">{{ title }}</h2>
+      <h2 class="project-title project-author-text">{{ author }}</h2>
+    </div>
     <time class="project-year" :datetime="year">{{ year }}</time>
   </section>
 </template>
@@ -23,26 +15,22 @@ export default {
   props: {
     title: {
       type: String,
-      required: false
-    },
-    categories: {
-      type: Array,
-      required: false
+      required: false,
     },
     year: {
       type: String,
-      required: false
+      required: false,
     },
     author: {
       type: String,
-      required: false
-    }
-  }
+      required: false,
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-.project-meta {
+.project-header {
   display: flex;
   padding: 0rem 0;
   text-transform: uppercase;
@@ -52,8 +40,13 @@ export default {
 .project-title {
   flex: 0 0 40%;
   font-size: 0.75rem;
-  font-weight: 500;
   margin: 0;
+}
+.project-author-text {
+  font-weight: 500;
+}
+.project-title-text {
+  font-weight: 700;
 }
 .project-categories {
   flex: 0.5;

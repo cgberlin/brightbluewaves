@@ -1,11 +1,14 @@
+<!-- page header component, always visible -->
 <template>
   <header class="header">
+    <!-- link home if clicked -->
     <g-link
       to="/"
       tag="h1"
       class="name"
       :class="{ first: data.first_letter_only }"
     >
+      <!-- optional param from forestry to toggle single letter -->
       <span
         class="word"
         :class="{ 'first-line': index === 0 && multiLine }"

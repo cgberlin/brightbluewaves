@@ -1,6 +1,17 @@
+<!-- footer component, always visible -->
 <template>
   <footer class="footer">
-    <div class="to-top" @click="scrollTopTop">-></div>
+    <!-- image to link to the top -->
+    <div class="to-top" @click="scrollTopTop">
+      <img
+        class="to-top-image"
+        @click="scrollTopTop"
+        src="https://lucianet.s3.amazonaws.com/up-arrow.svg"
+      />
+    </div>
+    <p class="copyright-text">&copy; Copyright 2021 brightbluewaves.com</p>
+
+    <!-- show social link if it exists -- removed for now
     <div class="social">
       <a
         class="channel"
@@ -11,6 +22,7 @@
         {{ social.link_text }}
       </a>
     </div>
+    -->
   </footer>
 </template>
 
@@ -20,44 +32,46 @@ import data from "@/data/theme.json";
 export default {
   data() {
     return {
-      data
+      data,
     };
   },
   methods: {
     scrollTopTop() {
       window.scrollTo({
         top: 0,
-        behavior: "smooth"
+        behavior: "smooth",
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style lang="scss">
 .footer {
   position: fixed;
-  bottom: 2rem;
+  bottom: 0rem;
   left: 0;
   width: 100%;
   display: flex;
+  flex-flow: row;
   justify-content: space-between;
-  padding: 0 2rem;
-  z-index: 100;
-  mix-blend-mode: difference;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  z-index: 9999;
 }
 .to-top {
-  transform: rotate(-90deg);
-  user-select: none;
   cursor: pointer;
-  border: 2px solid transparent;
-  text-align: center;
-  font-weight: 700;
-  line-height: 0;
-  padding: 1rem 0.5rem;
-  &:hover {
-    border: 2px solid white;
-  }
+  bottom: 0;
+}
+.to-top-image {
+  height: auto;
+  width: 2rem;
+  margin: 0;
+}
+.copyright-text {
+  transform: rotate(90deg);
+  padding-bottom: 16rem;
 }
 .social {
   .channel {

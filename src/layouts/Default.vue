@@ -1,3 +1,4 @@
+<!-- Main page wrapper, injects the header and footer around everything -->
 <template>
   <div class="layout">
     <Header />
