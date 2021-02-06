@@ -15,6 +15,12 @@ module.exports = {
         path: 'projects/**/*.md',
         route: '/:slug'
       }
+    },
+    {
+      use: '@gridsome/plugin-google-analytics',
+      options: {
+        id: 'UA-168916645-4'
+      }
     }
   ],
   transformers: {
