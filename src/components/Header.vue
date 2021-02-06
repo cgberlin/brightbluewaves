@@ -37,12 +37,14 @@
       class="fixed-contact-form"
       @submit.prevent="handleSubmit"
     >
+      <input type="hidden" name="form-name" value="contact" />
       <div class="form-group">
         <input
           type="text"
           class="form-control"
           id="name"
           placeholder="NAME"
+          @input="ev => form.name = ev.target.value"
           name="name"
           value=""
         />
@@ -54,6 +56,7 @@
           class="form-control"
           id="email"
           placeholder="EMAIL"
+          @input="ev => form.email = ev.target.value"
           name="email"
           value=""
         />
@@ -64,6 +67,7 @@
         rows="10"
         placeholder="MESSAGE"
         name="message"
+        @input="ev => form.message = ev.target.value"
       ></textarea>
       <div class="form-button-container">
         <button class="form-button" id="submit" type="submit">Send</button>
@@ -82,6 +86,11 @@ export default {
       data,
       // for toggling the contact form
       showContact: false,
+      form: {
+        name: "",
+        email: "",
+        message: ""
+      }
     };
   },
   computed: {
@@ -92,6 +101,31 @@ export default {
       return this.siteName.length >= 1;
     },
   },
+  methods: {
+    encode(data) {
+      return Object.keys(data)
+        .map(
+          key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+        )
+        .join("&");
+    },
+    handleSubmit(e) {
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: this.encode({
+          "form-name": "contact",
+          ...this.form
+        })
+      })
+        .then(() => {
+          alert('Sent!')
+        })
+        .catch(() => {
+          alert("Couldn't send mail")
+        });
+    }
+  }
 };
 </script>
 
