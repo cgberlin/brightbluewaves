@@ -65,18 +65,7 @@
         name="message"
       ></textarea>
       <div class="form-button-container">
-        <button
-          @click="showContact = false"
-          class="form-button"
-          id="submit"
-          type="submit"
-          value="SEND"
-        >
-          Cancel
-        </button>
-        <button class="form-button" id="submit" type="submit">
-          Send
-        </button>
+        <button class="form-button" id="submit" type="submit">Send</button>
       </div>
     </form>
   </header>
