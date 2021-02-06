@@ -82,4 +82,10 @@ p {
     margin-left: 40%;
   }
 }
+a,
+a:hover,
+a:focus,
+a:active {
+  color: inherit;
+}
 </style>

@@ -25,8 +25,59 @@
       </span>
     </g-link>
     <div class="contact">
-      <a class="link" :href="`mailto:${data.email}`">contact</a>
+      <a class="link" @click="showContact = !showContact">contact</a>
     </div>
+    <!-- contact form for netlify -->
+    <form
+      v-if="showContact"
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      class="fixed-contact-form"
+    >
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          placeholder="NAME"
+          name="name"
+          value=""
+        />
+      </div>
+
+      <div class="form-group">
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          placeholder="EMAIL"
+          name="email"
+          value=""
+        />
+      </div>
+
+      <textarea
+        class="form-control"
+        rows="10"
+        placeholder="MESSAGE"
+        name="message"
+      ></textarea>
+      <div class="form-button-container">
+        <button
+          @click="showContact = false"
+          class="form-button"
+          id="submit"
+          type="submit"
+          value="SEND"
+        >
+          Cancel
+        </button>
+        <button class="form-button" id="submit" type="submit">
+          Send
+        </button>
+      </div>
+    </form>
   </header>
 </template>
 
@@ -37,7 +88,9 @@ export default {
   name: "Header",
   data() {
     return {
-      data
+      data,
+      // for toggling the contact form
+      showContact: false,
     };
   },
   computed: {
@@ -46,8 +99,8 @@ export default {
     },
     multiLine() {
       return this.siteName.length >= 1;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -61,7 +114,6 @@ export default {
   letter-spacing: 0.05em;
   z-index: 100;
   opacity: 1;
-  mix-blend-mode: difference;
   transition: opacity 0.5s ease;
   &.hidden {
     opacity: 0;
@@ -97,5 +149,39 @@ export default {
       }
     }
   }
+}
+.contact:hover,
+.form-button:hover {
+  cursor: pointer;
+}
+.fixed-contact-form {
+  width: auto;
+  position: absolute;
+  right: 2%;
+  top: 20%;
+  background: white;
+  border-radius: 2%;
+  padding: 1rem;
+  box-shadow: -1px 2px 4px rgba(0, 0, 0, 0.25), 1px 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-flow: column;
+}
+.form-control,
+textarea {
+  max-width: 15rem;
+  min-width: 15rem;
+  width: 15rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+.form-button {
+  width: 45%;
+}
+.form-button-container {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5rem;
 }
 </style>
