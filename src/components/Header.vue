@@ -35,6 +35,7 @@
       method="POST"
       data-netlify="true"
       class="fixed-contact-form"
+      @submit.prevent="handleSubmit"
     >
       <div class="form-group">
         <input
