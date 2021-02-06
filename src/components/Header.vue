@@ -30,7 +30,7 @@
     <!-- contact form for netlify -->
     <form
       netlify
-      v-if="showContact"
+      v-show="showContact"
       name="contact"
       method="POST"
       data-netlify="true"
