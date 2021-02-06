@@ -29,6 +29,7 @@
     </div>
     <!-- contact form for netlify -->
     <form
+      netlify
       v-if="showContact"
       name="contact"
       method="POST"
